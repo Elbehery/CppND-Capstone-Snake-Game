@@ -77,3 +77,21 @@ bool Snake::SnakeCell(int x, int y) {
   }
   return false;
 }
+
+void Snake::SetInitialSpeed()
+{
+  float userSpeed;
+  std::cout << "Please enter the initial speed of the game. Select a number between [ 0.1, 0.9 ]. " << std::endl;
+  while (true)
+  {
+    int isNum = scanf("%f", &userSpeed);
+    if (isNum)
+    {
+      if (userSpeed >= 0.1 && userSpeed <= 0.9){
+        speed = userSpeed;
+        return;
+      }
+    }
+    std::cerr << "Input speed is out of expected range. Please Select a number between [ 0.1, 0.9 ]." << std::endl;
+  };
+}
